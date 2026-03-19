@@ -55,11 +55,13 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-black font-sans pb-20 w-full max-w-[390px] mx-auto border-x border-gray-100 shadow-xl relative overflow-hidden">
-      {currentScreen === 'profile' ? <ProfileScreen /> : <InboxScreen inboxCounts={inboxCounts} setInboxCounts={setInboxCounts} />}
+    <div className="h-[844px] bg-white text-black font-sans w-full max-w-[390px] mx-auto border border-gray-100 shadow-2xl relative overflow-hidden flex flex-col">
+      <div className="flex-1 overflow-y-auto pb-20 scrollbar-hide">
+        {currentScreen === 'profile' ? <ProfileScreen /> : <InboxScreen inboxCounts={inboxCounts} setInboxCounts={setInboxCounts} />}
+      </div>
 
       {/* Bottom Nav */}
-      <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[390px] bg-white pt-2 pb-6 flex items-center z-50 border-t border-gray-100">
+      <nav className="absolute bottom-0 left-0 w-full bg-white pt-2 pb-6 flex items-center z-50 border-t border-gray-100">
         {bottomNavItems.map((item) => {
           const isActive = currentScreen === item.id;
           if (item.isSpecial) {

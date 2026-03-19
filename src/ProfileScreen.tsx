@@ -146,7 +146,7 @@ export default function ProfileScreen() {
   ];
 
   return (
-    <div className="bg-white min-h-screen pb-20">
+    <div className="bg-white pb-20">
       <header className="sticky top-0 z-50 bg-white pb-3">
         {/* Status Bar */}
         <div className="flex justify-between items-center px-6 h-[60px] text-[15px] font-bold tracking-tight">
@@ -182,37 +182,40 @@ export default function ProfileScreen() {
       </header>
 
       <section className="pt-0 pb-[1px]">
-        <div className="flex justify-between px-4">
+        <div className="flex justify-between px-4 items-stretch">
           {/* Left: Info & Stats */}
-          <div className="flex-1">
-            <div className="flex items-center gap-1">
-              <h1 className="text-3xl font-bold tracking-tight">Coldplay</h1>
-              <ChevronDown className="w-5 h-5" />
+          <div className="flex flex-col">
+            <div>
+              <div className="flex items-center gap-1">
+                <h1 className="text-3xl font-bold tracking-tight leading-[1.1]">Coldplay</h1>
+                <ChevronDown className="w-5 h-5" />
+              </div>
+              <div className="flex items-center gap-1 text-[12px] font-semibold text-[rgba(0,0,0,0.48)] leading-[130%] mt-0.5">
+                <span>@coldplay</span>
+                <img src="https://picui.ogmua.cn/s1/2026/03/19/69bb9aa2723f0.webp" className="w-3.5 h-3.5" alt="Icon" referrerPolicy="no-referrer" />
+                <span>· Artist</span>
+              </div>
             </div>
-            <div className="flex items-center gap-1 text-[12px] font-semibold text-[rgba(0,0,0,0.48)] leading-[130%] mt-1">
-              <span>@coldplay</span>
-              <img src="https://picui.ogmua.cn/s1/2026/03/19/69bb9aa2723f0.webp" className="w-3.5 h-3.5" alt="Icon" referrerPolicy="no-referrer" />
-              <span>· Artist</span>
-            </div>
+            
             {/* Stats */}
-            <div className="flex gap-6 mt-4">
+            <div className="flex gap-6 mt-auto">
               <div className="flex flex-col items-start">
-                <span className="font-semibold text-[15px] leading-[130%] text-black -my-[1px]">36</span>
-                <span className="text-[12px] font-normal text-[rgba(0,0,0,0.48)] leading-[130%] mt-1">Following</span>
+                <span className="font-semibold text-[15px] leading-[1.2] text-black">36</span>
+                <span className="text-[12px] font-normal text-[rgba(0,0,0,0.48)] leading-[1.2]">Following</span>
               </div>
               <div className="flex flex-col items-start">
-                <span className="font-semibold text-[15px] leading-[130%] text-black -my-[1px]">8.1M</span>
-                <span className="text-[12px] font-normal text-[rgba(0,0,0,0.48)] leading-[130%] mt-1">Followers</span>
+                <span className="font-semibold text-[15px] leading-[1.2] text-black">8.1M</span>
+                <span className="text-[12px] font-normal text-[rgba(0,0,0,0.48)] leading-[1.2]">Followers</span>
               </div>
               <div className="flex flex-col items-start">
-                <span className="font-semibold text-[15px] leading-[130%] text-black -my-[1px]">88.3M</span>
-                <span className="text-[12px] font-normal text-[rgba(0,0,0,0.48)] leading-[130%] mt-1">Likes</span>
+                <span className="font-semibold text-[15px] leading-[1.2] text-black">88.3M</span>
+                <span className="text-[12px] font-normal text-[rgba(0,0,0,0.48)] leading-[1.2]">Likes</span>
               </div>
             </div>
           </div>
 
           {/* Right: Avatar */}
-          <div className="relative flex-shrink-0 ml-4 mt-2" ref={avatarRef}>
+          <div className="relative flex-shrink-0 ml-4" ref={avatarRef}>
             <div className="absolute top-[-13px] left-1/2 w-0 h-0 flex items-center justify-center z-[100]">
               {isPopping && (
                 Array.from({ length: 6 }).map((_, i) => {
@@ -297,7 +300,7 @@ export default function ProfileScreen() {
               </AnimatePresence>
             </div>
             <div className="w-[108px] h-[108px] relative flex items-center justify-center">
-              <img src="https://picui.ogmua.cn/s1/2026/03/19/69bb9d4885a95.webp" alt="Avatar" className="w-[96px] h-[96px] rounded-full object-cover" referrerPolicy="no-referrer" />
+              <img src="https://picui.ogmua.cn/s1/2026/03/19/69bb9d4885a95.webp" alt="Avatar" className="w-full h-full rounded-full object-cover" referrerPolicy="no-referrer" />
               <div className="absolute inset-0 pointer-events-none">
                 <svg width="108" height="108" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M105 54C105 25.8335 82.1665 3 54 3C25.8335 3 3 25.8335 3 54C3 82.1665 25.8335 105 54 105V108C24.1766 108 0 83.8234 0 54C0 24.1766 24.1766 0 54 0C83.8234 0 108 24.1766 108 54C108 83.8234 83.8234 108 54 108V105C82.1665 105 105 82.1665 105 54Z" fill="url(#paint0_linear_1984_24643)"/>
