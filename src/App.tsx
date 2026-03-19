@@ -55,13 +55,14 @@ export default function App() {
   ];
 
   return (
-    <div className="h-[844px] bg-white text-black font-sans w-full max-w-[390px] mx-auto border border-gray-100 shadow-2xl relative overflow-hidden flex flex-col">
-      <div className="flex-1 overflow-y-auto pb-20 scrollbar-hide">
-        {currentScreen === 'profile' ? <ProfileScreen /> : <InboxScreen inboxCounts={inboxCounts} setInboxCounts={setInboxCounts} />}
-      </div>
+    <div className="min-h-screen flex items-center justify-center bg-[#f8f8f8] p-4">
+      <div className="h-[844px] bg-white text-black font-sans w-full max-w-[390px] mx-auto border border-gray-100 shadow-2xl relative overflow-hidden flex flex-col rounded-[44px]">
+        <div className="flex-1 overflow-y-auto pb-20 scrollbar-hide">
+          {currentScreen === 'profile' ? <ProfileScreen /> : <InboxScreen inboxCounts={inboxCounts} setInboxCounts={setInboxCounts} />}
+        </div>
 
-      {/* Bottom Nav */}
-      <nav className="absolute bottom-0 left-0 w-full bg-white pt-2 pb-6 flex items-center z-50 border-t border-gray-100">
+        {/* Bottom Nav */}
+        <nav className="absolute bottom-0 left-0 w-full bg-white pt-2 pb-6 flex items-center z-50 border-t border-gray-100">
         {bottomNavItems.map((item) => {
           const isActive = currentScreen === item.id;
           if (item.isSpecial) {
@@ -97,5 +98,6 @@ export default function App() {
         })}
       </nav>
     </div>
-  );
+  </div>
+);
 }
